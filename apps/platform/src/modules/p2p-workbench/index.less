@@ -1,0 +1,131 @@
+.workbench {
+  display: grid;
+  min-width: 0;
+  gap: 24px;
+}
+.quickActions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  button {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    padding: 22px 18px;
+    border: 1px solid #e4e8f1;
+    border-radius: 12px;
+    background: #fff;
+    cursor: pointer;
+    gap: 13px;
+    text-align: left;
+    transition: transform 180ms, border-color 180ms, box-shadow 180ms;
+    &:hover {
+      transform: translateY(-3px);
+      border-color: var(--workspace-accent, #5566e8);
+      box-shadow: 0 8px 18px #26366508;
+    }
+    &:focus-visible {
+      outline: 3px solid #9aabff;
+      outline-offset: 3px;
+    }
+    small {
+      display: block;
+      margin-bottom: 6px;
+      color: #a5adbd;
+      font-size: 9px;
+    }
+    strong {
+      display: block;
+      color: #4c5972;
+      font-size: 13px;
+      font-weight: 550;
+    }
+  }
+}
+.actionIcon {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--workspace-soft, #edf0ff);
+  color: var(--workspace-accent, #5566e8);
+  font-size: 18px;
+}
+.actionDescription {
+  display: block;
+  margin-top: 7px;
+  color: #9ba3b3;
+  font-size: 10px;
+  line-height: 1.6;
+}
+.actionArrow {
+  margin-left: auto;
+  color: #b0b9ca;
+  font-size: 12px;
+}
+.projects {
+  min-width: 0;
+  padding: 0;
+  border: 1px solid #e4e8f1;
+  border-radius: 14px;
+  background: #fff;
+}
+.requests {
+  border: 1px solid #e4e8f1;
+  border-radius: 12px;
+  background: #fff;
+  summary {
+    display: flex;
+    align-items: center;
+    padding: 22px 24px;
+    cursor: pointer;
+    gap: 14px;
+    font-size: 13px;
+    color: #526079;
+    &::after {
+      margin-left: auto;
+      content: '+';
+      color: #99a5b9;
+      font-size: 20px;
+    }
+    small {
+      color: #9aa3b5;
+      font-size: 11px;
+    }
+  }
+  &[open] summary::after {
+    content: '−';
+  }
+}
+@media (max-width: 1100px) {
+  .quickActions {
+    gap: 10px;
+    button {
+      padding: 18px 14px;
+    }
+  }
+  .actionArrow,
+  .actionIcon {
+    display: none;
+  }
+}
+@media (max-width: 720px) {
+  .quickActions {
+    grid-template-columns: 1fr;
+  }
+  .actionIcon,
+  .actionArrow {
+    display: grid;
+  }
+  .requests summary {
+    flex-wrap: wrap;
+    padding: 18px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .quickActions button {
+    transition: none;
+  }
+}

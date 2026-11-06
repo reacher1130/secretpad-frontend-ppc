@@ -1,0 +1,138 @@
+@import "../../../styles/variables.less";
+
+.layoutContainer {
+  display: flex;
+  height: 100%;
+
+  .menuContainer {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-right: 1px solid @border-color;
+    transition: width 0.3s cubic-bezier(0.2, 0, 0, 1) 0s;
+
+    :global {
+      .ant-menu {
+        width: 100%;
+        background-color: transparent;
+        border-inline-end: none;
+        color: @text-secondary;
+      }
+
+      .ant-menu-item {
+        color: @text-secondary;
+        border-radius: 6px;
+        margin: 2px 8px;
+        width: calc(100% - 16px);
+
+        &:hover {
+          color: @primary-color;
+          background-color: @primary-color-lighter;
+        }
+
+        &.ant-menu-item-selected {
+          color: #fff;
+          background-color: @primary-color;
+        }
+      }
+
+      .ant-menu-submenu-title {
+        color: @text-secondary;
+        border-radius: 6px;
+        margin: 2px 8px;
+        width: calc(100% - 16px);
+
+        &:hover {
+          color: @primary-color;
+          background-color: @primary-color-lighter;
+        }
+      }
+    }
+  }
+
+  .siderHeader {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    color: @text-primary;
+
+    .siderLogo {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+    }
+
+    .siderTitle {
+      margin-left: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: @text-primary;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+
+  .siderTopExtra {
+    padding: 8px 16px 12px;
+  }
+
+  .menuWrapper {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .siderFooter {
+    padding: 8px 0;
+    border-top: 1px solid @border-color;
+  }
+
+  .unfold {
+    width: 220px;
+
+    .siderTitle {
+      display: block;
+    }
+  }
+
+  .fold {
+    width: 60px;
+
+    .siderTitle {
+      display: none;
+    }
+  }
+
+  .contentContainer {
+    overflow: scroll;
+    flex: 1;
+    background-color: @content-bg;
+    padding: 24px;
+  }
+
+  .workbenchContentContainer {
+    overflow: auto;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .collapseInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    color: @text-secondary;
+    font-size: 12px;
+    cursor: pointer;
+
+    &:hover {
+      color: @primary-color;
+    }
+  }
+}

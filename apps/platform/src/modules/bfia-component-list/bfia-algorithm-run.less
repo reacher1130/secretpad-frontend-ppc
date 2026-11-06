@@ -1,0 +1,216 @@
+.suite {
+  margin-bottom: 24px;
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px 20px;
+}
+
+.heroTitle {
+  margin-top: 0;
+}
+
+.heroDescription {
+  margin-bottom: 0 !important;
+}
+
+.overview {
+  padding: 12px 16px;
+  border: 1px solid #dbeafe;
+  border-radius: 8px;
+  margin: 16px 0;
+  background: #f7fbff;
+}
+
+.progressCaption,
+.navTitle,
+.logTools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.runFacts {
+  margin-top: 4px;
+}
+
+.notice {
+  margin-bottom: 12px;
+}
+
+.workspace {
+  display: grid;
+  align-items: start;
+  gap: 16px;
+  grid-template-columns: minmax(190px, 1fr) minmax(0, 2.8fr);
+}
+
+.algorithmNav,
+.algorithmDetail {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid #e4eaf3;
+  border-radius: 8px;
+}
+
+.algorithmNav {
+  background: #f9fbfd;
+}
+
+.navTitle {
+  margin: 0 3px 10px;
+}
+
+.navLegend {
+  display: block;
+  margin: 0 3px 8px;
+}
+
+.algorithmList {
+  display: grid;
+  padding: 0;
+  margin: 0;
+  gap: 5px;
+  list-style: none;
+}
+
+.algorithmChoice {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+
+  &:hover {
+    background: #eef5ff;
+  }
+
+  &[aria-pressed='true'] {
+    border-color: #91caff;
+    background: #eaf4ff;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #1677ff;
+    outline-offset: 1px;
+  }
+}
+
+.algorithmLine,
+.algorithmBadges,
+.detailHeader {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.algorithmLine {
+  justify-content: space-between;
+}
+
+.algorithmBadges {
+  flex-wrap: wrap;
+  margin-top: 3px;
+
+  :global(.ant-tag) {
+    margin-inline-end: 0;
+  }
+}
+
+.chevron {
+  color: #6c7b93;
+  font-size: 11px;
+}
+
+.detailHeader {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.detailTitle {
+  margin: 0 !important;
+}
+
+.basis {
+  margin: 8px 0 12px !important;
+}
+
+.principle {
+  padding: 12px;
+  border-radius: 6px;
+  background: #f6f9fc;
+}
+
+.principleCopy {
+  margin: 4px 0 !important;
+}
+
+.principleSteps {
+  display: grid;
+  padding-left: 22px;
+  margin: 6px 0;
+  gap: 3px;
+}
+
+.logSection {
+  padding-top: 14px;
+}
+
+.logTools {
+  margin: 0 0 8px;
+}
+
+.logLoading {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  gap: 8px;
+}
+
+.logOutput,
+.reportOutput {
+  overflow: auto;
+  max-height: 48vh;
+  padding: 12px 14px;
+  border-radius: 6px;
+  margin: 0;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.logOutput {
+  min-height: 132px;
+  background: #162238;
+  color: #e4ecf9;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.reportOutput {
+  background: #f6f9fc;
+}
+
+@media (max-width: 760px) {
+  .workspace {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .algorithmList {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 470px) {
+  .algorithmList {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
